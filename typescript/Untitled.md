@@ -1,0 +1,58 @@
+```ts
+interface Girl{
+
+  name:string;
+
+  age:number;
+
+  bust:number;
+
+  face?:number;
+
+}
+
+
+
+const girl = {
+
+  name:'大脚',
+
+  age:23,
+
+  bust:100,
+
+  face:22
+
+}
+
+
+
+
+
+const screenResume = (girl:Girl)=>{
+
+  let {age,name,bust} = girl;
+
+  age<24&&bust>=90&&console.log(name+'进入面试');
+
+  age>=24||bust<90&&console.log(name+'没有进入面试');
+
+}
+
+
+
+const getResum = (girl:Girl) =>{
+
+  let {age,name} = girl;
+
+  console.log(name+'年龄'+age);
+
+}
+
+
+
+screenResume(girl)
+
+getResum(girl)
+```
+
