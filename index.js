@@ -1,14 +1,10 @@
-function debounce(fn,time){
+function demo(fn){
     let timer = null;
     return function(){
-        if(timer){
-            clearTimeout(timer);
+        if(!t){
+            t = setTimeout(()=>{
+                t = null
+            },1000);
         }
-        if(!timer){
-            fn.call(this,arguments);
-        }
-        timer = setTimeout(()=>{
-            timer = null;
-        },time) 
     }
 }
