@@ -1,13 +1,29 @@
-let arr = [1,2,3,4,5,[2,3,4,5,6,[4,3,21,3,5]],[123,123,421],312,4123];
-// 第一种
+let b ;
 
-function Reduce(arr){
-    return arr.reduce((pre,item)=>{
-        return pre.concat(Array.isArray(item)?Reduce(item):item);
-    },[])
+function ajax() {
+    return new Promise((res)=>{
+        setTimeout(() => {
+            res('123123')
+        }, 1000);
+    })
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("get", "https://netease-cloud-music-api-zeta-bice.vercel.app/top/playlist");
+    // xhr.onreadystatechange = () => {
+    //     if (xhr.readyState === 4) {
+    //         if (xhr.status >= 200 || xhr.status < 400) {
+    //             async(xhr.response);
+    //         }
+    //     }
+    // }
+    // xhr.send(null);
 }
 
-console.log(Reduce(arr));
+async function async(){
+    b = await ajax();
+    console.log(b);
+    return '`12`1';
+}
+let a;
+async().then((res)=>{});
 
-// 第二种
-console.log(arr.flat(Infinity));
+console.log(b);
