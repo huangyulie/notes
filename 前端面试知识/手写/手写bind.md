@@ -1,5 +1,5 @@
-```js
-function fun(){
+function fun(a,b){
+    console.log(a+b);
     console.log(this,"this");
 }
 Function.prototype.MyBind = function(){
@@ -8,13 +8,10 @@ Function.prototype.MyBind = function(){
     let that = this;
     return function(){
         let a = Symbol();
-        t[a] = that;
-        t[a]();
-        delete t[a];
+        that.call(t,...arr)
     }
 }
 
-let b = fun.MyBind({x:1});
+let b = fun.MyBind({x:1},1,2);
 b();
 
-```
