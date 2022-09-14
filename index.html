@@ -1,59 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-            * {
-      margin: 0px;
-      padding: 0px;
-    }
-    #drag {
-      width: 200px;
-      height: 200px;
-      background: red;
-      cursor: pointer;
-      position: absolute;
-    }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <div id="drag"></div>
-
+  
 </body>
+<script src="./index.js"></script>
 <script>
-
-    window.onload = function() {
-      //获取drag元素
-      let drag = document.getElementById("drag")
-      //当鼠标按下时
-      drag.onmousedown = function(e) {
-        //做到浏览器兼容
-        e = e || window.event  
-        let diffX = e.clientX - drag.offsetLeft
-        let diffY = e.clientY - drag.offsetTop
-        console.log(diffX,diffY);
-        console.log(e.clientX);
-        //当拉着box移动时
-        document.onmousemove = function(e) {
-          // 浏览器兼容
-          e = e || window.event
-          let left = e.clientX - diffX
-          let top = e.clientY - diffY
-          drag.style.left = left + 'px'
-          drag.style.top = top + 'px'
-        }
-
-        // 当鼠标抬起时
-        document.onmouseup = function(e) {
-          this.onmousemove = null
-          this.onmouseup = null
-        }
-      }
-    }
-  </script>
-
+  let p = new Promise((res,rej)=>{
+    throw "123"
+  });
+  console.log(p);
+  p.then((data)=>{
+    console.log(data);
+  })
+</script>
 </html>
