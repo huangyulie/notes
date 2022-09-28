@@ -1,0 +1,15 @@
+【原生】js怎么判断数组是否包含另一个数组
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8];
+let b = [1, 2];
+let c = [3, 9];
+
+function includes(arr1, arr2) {
+  return arr2.every(val => arr1.includes(val));
+}
+
+console.log(includes(a, b));  //true
+console.log(includes(a, c));  //false
+————————————————
+版权声明：本文为CSDN博主「Sparks67」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_42971942/article/details/86692071
