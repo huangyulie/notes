@@ -1,0 +1,11 @@
+```
+function* sleep(time){
+    yield new Promise((res,rej)=>{
+        setTimeout(() => {
+            res(12312)
+        }, time);
+    })
+}
+
+sleep(1000).next().value.then((data)=>{console.log(data);})
+```
